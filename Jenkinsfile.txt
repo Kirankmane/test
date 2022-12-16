@@ -1,15 +1,15 @@
 pipeline {
     agent none 
     stages {
-        stage('Example Build') {
-            steps {
-                sh 'date'
-            }
-        }
-        stage('Example Test') {
-            steps {
-                sh 'java -version'
-            }
-        }
+        stage('Build') { 
+        sh 'java -version'
+    }
+    stage('Test') {
+        sh 'jenkins --version'
+    }
+    stage('Deploy') {
+        sh 'date'
+    }
+  
     }
 }
